@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 import java.text.*;
-public class Main{
+public class Template{
     
     //make it false if Multiple test case is not in the question
     static boolean multipleTC = true;
@@ -10,7 +10,7 @@ public class Main{
     void pre() throws Exception
     {}
         public static void main(String[] args) throws Exception{
-        new Main().run();
+        new Template().run();
       }
       
 
