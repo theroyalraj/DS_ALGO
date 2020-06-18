@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 import java.text.*;
-public class Template{
+public class Main{
     
     //make it false if Multiple test case is not in the question
     static boolean multipleTC = true;
@@ -10,29 +10,22 @@ public class Template{
     void pre() throws Exception
     {}
         public static void main(String[] args) throws Exception{
-        new Template().run();
+        new Main().run();
       }
       
 
       //code here
-   public String code(){
-
-
-
+   public String solve(){
        return "Yes";
 
     }  
       
 
     // input output handled here
-    private void in_out(int tc) throws Exception{
-        final StringBuilder print=new StringBuilder("");
- 
-         
+    private String in_out(int tc) throws Exception{
+          //take input here
 
-
-        print.append(code()).append("\n");
-        p(print);
+        return solve();
 
     }
     
@@ -42,17 +35,17 @@ public class Template{
     
     
     void run() throws Exception{
-
-      //  in = new FastReader("input.txt");
-      //  out = new PrintWriter("output.txt");
-
-        in = new FastReader();
-        out = new PrintWriter(System.out);
- 
-        int T = (multipleTC)?ni():1;
+        in = new FastReader("input.txt");  out = new PrintWriter("output.txt");
+        // in = new FastReader(); out = new PrintWriter(System.out);
+        
+        final StringBuilder print=new StringBuilder("");
         pre();
-        for(int t = 1; t<= T; t++)
-        in_out(t);
+        int T = (multipleTC)?ni():1;
+        for(int t = 1; t<= T; t++){
+        print.append(in_out(t)).append("\n");
+        }
+
+        p(print);
         
         
         out.flush();
