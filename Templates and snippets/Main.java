@@ -3,129 +3,184 @@ import java.io.*;
 
 public class Main {
 
-	// make it false if Multiple test case is not in the question
-	static boolean multipleTC = true;
-	int TestCase = 1;
+    static PrintWriter out;
+    static FastReader fr;
+    // make it false if Multiple test case is not in the question
+    static boolean multipleTC = true;
+    static int TestCase = 1;
 
-	// for pre processing if needed
-	void pre() throws Exception {
-	}
+    // for pre processing if needed
+    void pre() throws Exception {
+    }
 
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-		new Main().run();
-	}
+        new Main().run();
+    }
 
-	// input output handled here
-	private String solve(int tc) throws Exception {
-		// code
+    // input output handled here
+    private String solve() throws Exception {
+        // code
 
-		return "";
-	}
+        return "";
+    }
 
-	void run() throws Exception {
-		// long start_time = System.nanoTime();
+    void run() throws Exception {
+        // long start_time = System.nanoTime();
 
-		try {
-			in = new FastReader("in0.txt");
-			out = new PrintWriter("out0.txt");
-		} catch (Exception e) {
-			in = new FastReader();
-			out = new PrintWriter(System.out);
-		}
+        try {
+            fr = new FastReader("in0.txt");
+            out = new PrintWriter("out0.txt");
+        } catch (Exception e) {
+            fr = new FastReader();
+            out = new PrintWriter(System.out);
+        }
+        pre();
+        StringBuilder print = new StringBuilder("");
 
-		StringBuilder print = new StringBuilder("");
-		pre();
-		int T = (multipleTC) ? ni() : 1;
-		for (int t = 1; t <= T; t++) {
-			this.TestCase = t;
-			print.append(solve(t)).append("\n");
-		}
+        int T = (multipleTC) ? fr.ni() : 1;
+        for (int t = 1; t <= T; t++) {
+            TestCase = t;
+            print.append(solve()).append("\n");
+        }
 
-		p(print);
-		// long end_time = System.nanoTime();
-		// System.out.printf("Running Time in sec : %2.10f", (double) (end_time -
-		// start_time) * (double) 1e-9);
+        p(print);
+        // long end_time = System.nanoTime();
+        // System.out.printf("Running Time in sec : %2.10f", (double) (end_time -
+        // start_time) * (double) 1e-9);
 
-		out.flush();
-		out.close();
-	}
+        out.flush();
+        out.close();
+    }
 
-	PrintWriter out;
-	FastReader in;
+    void p(Object o) {
+        out.print(o);
+    }
 
-	void p(Object o) {
-		out.print(o);
-	}
+    void pln(Object o) {
+        out.println(o);
+    }
 
-	void pln(Object o) {
-		out.println(o);
-	}
+    void psp(Object o) {
+        out.print(o + " ");
+    }
 
-	void pnf(Object o) {
-		out.println(o);
-		out.flush();
-	}
+    void pnf(Object o) {
+        out.println(o);
+        out.flush();
+    }
 
-	void deb(Object x) {
-		pln("#" + TestCase + " = " + x);
-	}
+    static void deb(Object... x) {
+        System.out.print("#" + TestCase + " = ");
+        for (int i = 0; i < x.length - 1; i++)
+            System.out.print(x[i] + " , ");
+        System.out.println(x[x.length - 1]);
 
-	void deb2(Object x, Object y) {
-		pln("#" + TestCase + " = " + x + " , " + y);
-	}
+    }
 
-	String n() throws Exception {
-		return in.next();
-	}
+    static void in(int a) throws Exception {
+        a = fr.ni();
+    }
 
-	String nln() throws Exception {
-		return in.nextLine();
-	}
+    static void in(long a) throws Exception {
+        a = fr.ni();
+    }
 
-	int ni() throws Exception {
-		return Integer.parseInt(in.next());
-	}
+    static void in(String[] a) throws Exception {
+        a = fr.nln().trim().split(" ");
+    }
 
-	long nl() throws Exception {
-		return Long.parseLong(in.next());
-	}
+    static void in(String a) throws Exception {
+        a = fr.next();
+    }
 
-	double nd() throws Exception {
-		return Double.parseDouble(in.next());
-	}
+    static void in(int a[]) throws Exception {
+        for (int i = 0; i < a.length; i++) {
+            a[i] = fr.ni();
+        }
+    }
 
-	class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    static void in(long a[]) throws Exception {
+        for (int i = 0; i < a.length; i++) {
+            a[i] = fr.nl();
+        }
+    }
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+    static void in(int a[][]) throws Exception {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                a[i][j] = fr.ni();
+            }
+        }
+    }
 
-		public FastReader(String s) throws Exception {
-			br = new BufferedReader(new FileReader(s));
-		}
+    class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-		String next() throws Exception {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					throw new Exception(e.toString());
-				}
-			}
-			return st.nextToken();
-		}
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		String nextLine() throws Exception {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				throw new Exception(e.toString());
-			}
-			return str;
-		}
-	}
+        public FastReader(String s) throws Exception {
+            br = new BufferedReader(new FileReader(s));
+        }
+
+        String next() throws Exception {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    throw new Exception(e.toString());
+                }
+            }
+            return st.nextToken();
+        }
+
+        String nextLine() throws Exception {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                throw new Exception(e.toString());
+            }
+            return str;
+        }
+
+        String n() throws Exception {
+            return fr.next();
+        }
+
+        String nln() throws Exception {
+            return fr.nextLine();
+        }
+
+        int ni() throws Exception {
+            return Integer.parseInt(fr.next());
+        }
+
+        long nl() throws Exception {
+            return Long.parseLong(fr.next());
+        }
+
+        double nd() throws Exception {
+            return Double.parseDouble(fr.next());
+        }
+
+        int[] nextIntArray(int n) throws Exception {
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = fr.ni();
+            }
+            return a;
+        }
+
+        long[] nextLongArray(int n) throws Exception {
+            long[] a = new long[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = fr.ni();
+            }
+            return a;
+        }
+    }
 }
