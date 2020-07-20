@@ -152,7 +152,7 @@ public class Main {
         }
 
         String nln() throws Exception {
-            return fr.nextLine();
+            return fr.nextLine().trim();
         }
 
         int ni() throws Exception {
