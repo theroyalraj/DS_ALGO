@@ -21,7 +21,7 @@ public class Main {
     // input output handled here
     private String solve() throws Exception {
         // code
-
+        
         return "";
     }
 
@@ -53,19 +53,19 @@ public class Main {
         out.close();
     }
 
-    void p(Object o) {
+    static void p(Object o) {
         out.print(o);
     }
 
-    void pln(Object o) {
+    static void pln(Object o) {
         out.println(o);
     }
 
-    void psp(Object o) {
+    static void psp(Object o) {
         out.print(o + " ");
     }
 
-    void pnf(Object o) {
+    static void pnf(Object o) {
         out.println(o);
         out.flush();
     }
