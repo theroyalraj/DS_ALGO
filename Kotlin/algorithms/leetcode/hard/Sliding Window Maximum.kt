@@ -7,7 +7,7 @@
  * @author Utkarsh Raj, utraj00114@gmail.com
  */
 
-package com.raj.algorithms.leetcode
+package com.raj.algorithms.leetcode.hard
 
 fun main() {
 

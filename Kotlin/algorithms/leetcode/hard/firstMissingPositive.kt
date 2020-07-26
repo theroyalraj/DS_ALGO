@@ -6,13 +6,21 @@
  * @author Utkarsh Raj, utraj00114@gmail.com
  */
 
-package com.raj.algorithms.leetcode
+package com.raj.algorithms.leetcode.hard
 
 fun main(args: Array<String>) {
     val nums = intArrayOf()
     println("Array is ${nums.contentToString()}")
-    println("first positive missing number in O(n) time complexity and O(n) using counting technique ${arrayMex(nums)}")
-    println("first positive missing number in O(n) time complexity and O(1) ${firstMissingPositive(nums)}")
+    println(
+        "first positive missing number in O(n) time complexity and O(n) using counting technique ${arrayMex(
+            nums
+        )}"
+    )
+    println(
+        "first positive missing number in O(n) time complexity and O(1) ${firstMissingPositive(
+            nums
+        )}"
+    )
 }
 
 // in-place shifting to get min positive
