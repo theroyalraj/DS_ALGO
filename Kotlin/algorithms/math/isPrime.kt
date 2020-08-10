@@ -18,10 +18,8 @@ else if (n % 2 == 0L || n % 3 == 0L)
     false
 else {
     val sqrt = sqrt(n.toDouble()).toLong()
-    for (i in 5..sqrt + 1 step 6) if (n % i == 0L || n % (i + 2) == 0L) {
-        false
-    }
-
+    for (i in 5..sqrt + 1 step 6) if (n % i == 0L || n % (i + 2) == 0L) false
+    
     true
 }
 
